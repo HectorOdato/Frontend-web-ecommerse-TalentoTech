@@ -1,0 +1,115 @@
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border: 2px;
+    padding: 0px;
+    margin: 0px;
+    background-color: rgb(52, 49, 49);
+}
+
+.contenedor-header{
+    display: flex;
+}
+
+.titulo{
+    font-size: 5rem;
+    margin-top: 5px;
+}
+
+.menubar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 50px;
+}
+
+.lista{
+    display: flex;
+    list-style: none;
+    gap: 40px;
+    font-size: 1.3rem;
+}
+.section-articulos{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+.contenedor-articulo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgb(52, 49, 49);
+    padding: 15px;
+    width: 220px;
+}
+.contenedor-articulo img{
+    width: 230px;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.art-price{
+    font-size: 16px;
+    color: rgb(9, 249, 249);
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.art-name{
+    font-size: 14px;
+    margin: 5px 0;
+}
+.art-button{
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 13px 35px;
+    margin-top: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.section-contacto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.titulo-contacto{
+    font-size: 5rem;
+}
+  form {
+    width: 50%;
+    margin: 40px auto;
+    padding: 25px;
+    border-radius: 12px;
+    background: #fff;
+  }
+
+  label {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+
+  input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+  }
+
+  .button-form {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #0078ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
