@@ -6,8 +6,13 @@ body{
     background-color: rgb(52, 49, 49);
 }
 
-.contenedor-header{
+header{
     display: flex;
+    gap: 10px;
+    background-image: url("../img/gettyimages-117146355-1024x1024.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .titulo{
@@ -19,6 +24,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    justify-items: center;
     margin-left: 50px;
 }
 
