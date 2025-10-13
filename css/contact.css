@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&family=BBH+Sans+Bogle&display=swap');
 body{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     border: 2px;
@@ -11,9 +12,12 @@ body{
 }
 
 .titulo{
-    font-size: 5rem;
-    margin-top: 5px;
+    font-family: "BBH Sans Bartle", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 4rem ;
 }
+
 
 .menubar{
     display: flex;
@@ -27,6 +31,13 @@ body{
     list-style: none;
     gap: 40px;
     font-size: 1.3rem;
+    font-family: "BBH Sans Bogle", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.lista a {
+  text-decoration: none;
+  color: white;
 }
 
 .contenedor-contacto{
@@ -39,6 +50,9 @@ body{
     font-size: 5rem;
     margin: 2px;
     text-align: center;
+    font-family: "BBH Sans Bogle", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
   form {
     width: 50%;

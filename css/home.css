@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&family=BBH+Sans+Bogle&display=swap');
 body{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     border: 2px;
@@ -9,15 +10,13 @@ body{
 header{
     display: flex;
     gap: 10px;
-    background-image: url("../img/gettyimages-117146355-1024x1024.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
 }
 
 .titulo{
-    font-size: 5rem;
-    margin-top: 5px;
+    font-family: "BBH Sans Bartle", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 4rem ;
 }
 
 .menubar{
@@ -30,10 +29,26 @@ header{
 
 .lista{
     display: flex;
+    color: rgb(255, 255, 255);
     list-style: none;
     gap: 40px;
     font-size: 1.3rem;
+    font-family: "BBH Sans Bogle", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
+
+.lista a {
+  text-decoration: none;
+  color: white;
+}
+
+.imagen-promo{
+    width: 100%;
+    height: 500px;
+    margin-bottom: 30px;
+}
+
 .section-articulos{
     display: flex;
     justify-content: center;
