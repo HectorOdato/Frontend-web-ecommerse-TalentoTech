@@ -28,6 +28,7 @@ body{
 
 .lista{
     display: flex;
+    color: rgb(255, 255, 255);
     list-style: none;
     gap: 40px;
     font-size: 1.3rem;
@@ -91,3 +92,11 @@ body{
   .info-contacto{
     margin-top: 20px;
   }
+
+  footer{
+    display: flex;
+    justify-content: space-around;
+    justify-items: center;
+    align-items: stretch;
+    margin: 20px;
+}
