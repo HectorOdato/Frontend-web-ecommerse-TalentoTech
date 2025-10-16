@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&family=BBH+Sans+Bogle&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&family=BBH+Sans+Bogle&family=BBH+Sans+Hegarty&display=swap');
 body{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     border: 2px;
@@ -17,6 +17,11 @@ header{
     font-weight: 400;
     font-style: normal;
     font-size: 4rem ;
+    margin-left: 20px;
+}
+
+.titulo .resaltado{
+    color: #FFD700;
 }
 
 .menubar{
@@ -53,7 +58,7 @@ header{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 80px;
     padding: 20px;
 }
 .contenedor-articulo{
@@ -64,7 +69,7 @@ header{
     border-radius: 10px;
     box-shadow: 0 4px 10px rgb(52, 49, 49);
     padding: 15px;
-    width: 220px;
+    width: 250px;
 }
 .contenedor-articulo img{
     width: 230px;
@@ -92,6 +97,50 @@ header{
     margin-top: 10px;
     font-weight: bold;
     cursor: pointer;
+}
+
+.section-reseñas-grid{
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    justify-items: center;
+    justify-content: center;
+}
+.titulo-reseñas{
+    grid-column: 1/4;
+    font-family: "BBH Sans Hegarty", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 4rem;
+    color: #FFD700;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.contenedor-reseña{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    height: auto;
+    background-color: rgb(74, 75, 77);
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgb(0, 0, 0,0.5);
+    margin-bottom: 50px;
+}
+.imagen-reseña{
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+.name-reseña{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    margin: 10px 0 5px 0;
+    font-size: 1.5rem;
+    color: white;
+}
+.descripcion-reseña{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 100%;
+    text-align: center;
+    color: white;
 }
 
 footer{
