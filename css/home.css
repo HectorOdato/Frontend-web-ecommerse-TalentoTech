@@ -151,3 +151,62 @@ footer{
     margin: 20px;
 }
 
+@media (max-width: 768px) {
+
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .titulo {
+    font-size: 2.3rem;
+    margin: 0;
+  }
+
+  .lista {
+    flex-direction: column;
+    gap: 15px;
+    font-size: 1.1rem;
+  }
+
+  .imagen-promo {
+    height: 220px;
+  }
+
+  .section-articulos {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .contenedor-articulo {
+    width: 80%;
+  }
+
+  .section-reseñas-grid {
+    grid-template-columns: 90%;
+    justify-content: center;
+  }
+
+  .titulo-reseñas {
+    font-size: 2.3rem;
+    grid-column: 1 / 2;
+  }
+
+  .contenedor-reseña {
+    width: 90%;
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+  }
+
+  footer div {
+    margin-bottom: 15px;
+  }
+}
