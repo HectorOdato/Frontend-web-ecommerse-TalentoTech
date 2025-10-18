@@ -16,6 +16,12 @@ body{
     font-weight: 400;
     font-style: normal;
     font-size: 4rem ;
+    margin-left: 20px;
+}
+
+
+.titulo .resaltado{
+    color: #FFD700;
 }
 
 
