@@ -191,9 +191,17 @@ footer{
     align-items: center;
     gap: 30px;
   }
-
+.titulo-product {
+    font-family: "BBH Sans Hegarty", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2rem;
+    color: #FFD700;
+    text-align: center;
+    margin-bottom: 50px;
+    }
   .contenedor-articulo {
-    width: 80%;
+    width: 70%;
   }
 
   .section-reseñas-grid {

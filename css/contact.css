@@ -52,6 +52,7 @@ body{
     justify-content: center;
     align-items: flex-start;
     gap: 100px;
+    margin-bottom: 100px;
 }
 .titulo-contacto{
     font-size: 5rem;
@@ -136,7 +137,7 @@ body{
     gap: 40px;
     padding: 20px;
   }
-
+  
   form {
     width: 80%;
   }

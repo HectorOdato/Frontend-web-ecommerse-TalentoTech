@@ -1,4 +1,4 @@
-/* css/cart.css */
+
 .section-carrito {
     width: 90%;
     max-width: 1000px;
@@ -98,4 +98,46 @@
 #contador-carrito {
     font-weight: bold;
     color: #ff1100;
+}
+
+
+@media (max-width: 600px) {
+
+    .section-carrito {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .carrito-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 20px 0;
+    }
+
+    .item-detalles {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .item-detalles img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .resumen-compra {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        font-size: 1.2em;
+    }
+
+    .button-finalizar {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+        font-size: 1.1em;
+    }
 }
