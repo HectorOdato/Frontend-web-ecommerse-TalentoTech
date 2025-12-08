@@ -156,3 +156,8 @@ body{
     margin-bottom: 10px;
   }
 }
+
+#contador-carrito {
+    font-weight: bold;
+    color: #ff1100;
+}
