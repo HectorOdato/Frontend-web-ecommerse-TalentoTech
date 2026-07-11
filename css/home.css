@@ -30,6 +30,7 @@ header{
 }
 
 .menubar{
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -51,6 +52,66 @@ header{
 .lista a {
     text-decoration: none;
     color: white;
+}
+
+.btn-menu{
+    background:#000000;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size: 1.3rem;
+    font-family: "BBH Sans Bogle", sans-serif;
+    font-weight: 400;
+    transition:0.3s;
+}
+
+.btn-menu:hover{
+    background:#005fd1;
+}
+
+.lista-categorias{
+    list-style:none;
+    position:absolute;
+    top:55px;
+    left: 50%;
+    transform: translateX(-50%);
+    width:220px;
+    background:white;
+    border-radius:8px;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+
+    display:none;
+    overflow:hidden;
+}
+
+.lista-categorias.mostrar{
+    display:block;
+    animation:desplegar .25s ease;
+}
+
+.lista-categorias li a{
+    display:block;
+    padding:14px;
+    text-decoration:none;
+    color:#333;
+    transition:.2s;
+}
+
+.lista-categorias li a:hover{
+    background:#0077ff;
+    color:white;
+}
+
+@keyframes desplegar{
+    from{
+        opacity:0;
+        transform:translateY(-10px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
 .imagen-promo{

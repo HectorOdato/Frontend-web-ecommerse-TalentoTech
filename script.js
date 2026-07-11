@@ -2,7 +2,45 @@
 // --- CONSUMO DE API EXTERNA Y RENDERIZADO DE PRODUCTOS ---
 
 const seccionArticulos = document.getElementById('seccionArticulos');
-const apiUrl = 'https://fakestoreapi.com/products'; 
+const apiUrl = 'http://localhost:8080/productos'; 
+
+
+const boton = document.getElementById("btnCategorias");
+const lista = document.getElementById("listaCategorias");
+
+boton.addEventListener("click", () => {
+    lista.classList.toggle("mostrar");
+});
+
+// Cerrar el menú al hacer clic fuera
+document.addEventListener("click", (e) => {
+    if (!boton.contains(e.target) && !lista.contains(e.target)) {
+        lista.classList.remove("mostrar");
+    }
+});
+
+
+let categoriasData = [];
+
+async function fetchCategorias() {
+    try {
+        const response = await fetch('http://localhost:8080/categorias');
+        const data = await response.json();
+        categoriasData = data;
+        renderCategorias(categoriasData);
+    } catch (error) {
+        console.error('Error al obtener categorías:', error);
+    }
+}
+
+function renderCategorias(categorias){
+    if (!lista) return;
+    lista.innerHTML = '';
+    categorias.forEach(categoria => {
+        const categoriaHTML = `<li><a href="./pages/category/${categoria.nombre.toLowerCase().replace(/\s+/g, '-')}.html">${categoria.nombre}</a></li>`;
+        lista.innerHTML += categoriaHTML;
+    });
+};
 
 let productsData = [];
 
@@ -17,21 +55,22 @@ async function fetchProducts() {
     }
 }
 
-function renderProductos(products) {
+function renderProductos(productos) {
     if (!seccionArticulos) return;
     seccionArticulos.innerHTML = '';
-    products.forEach(product => {
+    productos.forEach(productos => {
         const productHTML = 
             `<div class="contenedor-articulo">` +
-            `<img src="${product.image}" alt="${product.title}">` +
-            `<p class="art-precio">$${product.price.toLocaleString('es-AR')}</p>` +
-            `<p class="art-nombre">${product.title}</p>` +
-            `<button type="button" class="art-boton" data-id="${product.id}">Añadir al carrito</button>` +
+            `<img src="${productos.imagenURL}" alt="${productos.nombre}">` +
+            `<p class="art-precio">$${productos.precio.toLocaleString('es-AR')}</p>` +
+            `<p class="art-nombre">${productos.nombre}</p>` +
+            `<button type="button" class="art-boton" data-id="${productos.id}">Añadir al carrito</button>` +
             `</div>`;
         seccionArticulos.innerHTML += productHTML;
     });
     carritoEventListener();
 };
+
 
 // --- GESTIÓN DEL CARRITO (CONTADOR Y ALMACENAMIENTO) ---
 
@@ -77,7 +116,7 @@ function agregarCarrito(productId) {
     } else {
         const producto = productsData.find(p => String(p.id) === productId);
         if (producto) {
-            storageCarrito.push({ id: productId, quantity: 1, title: producto.title, price: producto.price, image: producto.image });
+            storageCarrito.push({ id: productId, quantity: 1, title: producto.nombre, price: producto.price, image: producto.imagen });
         }
     }
     alert(`Producto agregado al carrito. Items totales: ${storageCarrito.reduce((total, item) => total + item.quantity, 0)}`);
@@ -178,3 +217,4 @@ function finalizarCompra() {
 
 // --- INICIO DEL SCRIPT ---
 fetchProducts();
+fetchCategorias();

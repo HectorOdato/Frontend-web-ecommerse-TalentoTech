@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto-pre-entrega</title>
+    <link rel="stylesheet" href="../../../css/home.css">
+</head>
+<body>
+    <header>
+        <h1 class="titulo"><span class="resaltado">Z</span>Stride</h1>
+        <nav class="menubar">
+            <ul id="lista" class="lista">
+                <li><a href="../../../index.html">Inicio</a></li>
+                <li><a href="../../../pages/contact.html">Contacto</a></li>
+                <li><a href="../../../carrito.html" id="carrito">🛒 Carrito(<span id="contador-carrito">0</span>)</a></li>
+            </ul>
+            <button id="btnCategorias" class="btn-menu">Categorías ▼</button>
+            <ul id="listaCategorias" class="lista-categorias"></ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <img src="../../../img/imageportada.webp
+            " alt="promocion" class="imagen-promo">
+        </section>
+        <h2 class="titulo-product">INDUMENTARIA</h2>
+        <section class="section-articulos">
+            <script>
+                const seccionArticulos = document.querySelector('.section-articulos');
+                const categoria = '6a516a4796709aa22ba09bda';
+                const apiUrl = `http://localhost:8080/productos/categoria/${categoria}`; 
+
+
+                async function fetchProducts() {
+                    try {
+                        const response = await fetch(apiUrl);
+                        if (!response.ok) {
+                            throw new Error('Error al obtener los productos');
+                        }
+                        const productos = await response.json()
+                        renderProducts(productos);
+                    } catch (error) {
+                        console.error('Error al obtener los productos:', error);
+                    }
+                }
+
+                function renderProducts(productos) {
+                    seccionArticulos.innerHTML = '';
+                    productos.forEach(producto => {
+                            const productHTML = `<div class="contenedor-articulo">` +
+                            `<img src="${producto.imagenURL}" alt="${producto.nombre}">` +
+                            `<p class="art-precio">$${producto.precio.toLocaleString('es-AR')}</p>` +
+                            `<p class="art-nombre">${producto.nombre}</p>` +
+                            `<button type="button" class="art-boton" data-id="${producto.id}">Añadir al carrito</button>` +
+                            `</div>`;;
+                            seccionArticulos.innerHTML += productHTML;
+                        
+                    });
+                }
+                fetchProducts();
+            </script>
+        </section>
+        <section class="section-reseñas-grid">
+                    <h2 class="titulo-reseñas">RESEÑAS</h2>
+            <div class="contenedor-reseña">
+                <img src="../../../img/reviews/Lucia-reseña.png" alt="Emma-reseña" width="180" height="180" class="imagen-reseña">
+                <p class="name-reseña">Lucia</p>
+                <p>⭐⭐⭐⭐⭐</p>
+                <p class="descripcion-reseña">"Excelente tienda, la atención fue muy amable y rápida. Encontré justo el modelo que buscaba y la calidad del calzado es increíble. Definitivamente volveré a comprar aquí."</p>
+            </div>
+            <div class="contenedor-reseña">
+                <img src="../../../img/reviews/Taylor-reseña.webp" alt="Sarah-reseña" width="180" height="180"class="imagen-reseña">
+                <p class="name-reseña">Taylor</p>
+                <p>⭐⭐⭐⭐⭐</p>
+                <p class="descripcion-reseña">"Buena experiencia en general. Los precios son competitivos y tienen una gran variedad de talles y modelos. Lo único que mejoraría es que tengan más opciones de colores disponibles."</p>
+            </div>
+            <div class="contenedor-reseña">
+                <img src="../../../img/reviews/Sarah-reseña.webp" alt="Taylor-reseña" width="180" height="180"class="imagen-reseña">
+                <p class="name-reseña">Sara</p>
+                <p>⭐⭐⭐⭐⭐</p>
+                <p class="descripcion-reseña">"¡Me encantó! El personal me ayudó a elegir el calzado perfecto para mis entrenamientos y me dieron muy buenos consejos sobre cuidado y ajuste. Muy recomendable para los amantes del deporte."</p>
+            </div>
+        </section>
+        <hr>
+    </main>
+    <footer>
+        <div class="footer-copyright">
+            <p>© 2025 ZStride. Todos los derechos reservados</p>
+        </div>
+        <div>
+            <h4>INFORMACION DE CONTACTO</h4>
+                <p><strong>Direccion:</strong></p>
+                <p>Av varela 2836, CABA</p>
+                <p><a href="">zstride@gmail.com</a></p>
+                <p>1160010594</p>
+        </div>
+        <div class="footer-contacto">
+            <h4>SEGUINOS EN REDES</h4>
+            <a href="https://www.instagram.com" target="_blank">
+                <img src="../../../img/icons/icons8-instagram-48.png" alt="instagram" width="48" height="48">
+            </a>
+                <a href="https://www.facebook.com" target="_blank">
+                <img src="../../../img/icons/icons8-facebook-48.png" alt="facebook" width="48" height="48">
+            </a>
+            </a>
+                <a href="https://web.whatsapp.com" target="_blank">
+                <img src="../../../img/icons/icons8-whatsapp-48.png" alt="wps" width="48" height="48">
+            </a>
+        </div>
+    </footer>
+    <script src="./category.js"></script>
+</body>
+</html>
