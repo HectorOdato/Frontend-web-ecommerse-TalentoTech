@@ -41,8 +41,8 @@ function renderTabla() {
             <td>$${prod.precio.toLocaleString('es-AR')}</td>
             <td>${prod.stock} un.</td>
             <td>
-                <button class="btn-icon" onclick="prepararEdicion('${prod.id}')" title="Editar">✏️</button>
-                <button class="btn-icon" onclick="eliminarProducto('${prod.id}')" title="Eliminar">🗑️</button>
+                <button class="btn-icon-editar" onclick="prepararEdicion('${prod.id}')" title="Editar">EDITAR</button>
+                <button class="btn-icon-eliminar" onclick="eliminarProducto('${prod.id}')" title="Eliminar">ELIMINAR</button>
             </td>
         `;
         tbody.appendChild(tr);
