@@ -17,7 +17,7 @@ let categoriasData = [];
 
 async function fetchCategorias() {
     try {
-        const response = await fetch('http://localhost:8080/categorias');
+        const response = await fetch('https://backend-web-ecommerse-talentotech.onrender.com/categorias');
         const data = await response.json();
         categoriasData = data;
         renderCategorias(categoriasData);

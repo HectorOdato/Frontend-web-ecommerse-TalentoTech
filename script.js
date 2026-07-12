@@ -1,5 +1,5 @@
 
-const apiUrl = 'http://localhost:8080';
+const apiUrl = 'https://backend-web-ecommerse-talentotech.onrender.com';
 const CACHE_KEY = 'zstridecarrito';
 let productsData = [];
 let storageCarrito = JSON.parse(localStorage.getItem(CACHE_KEY)) || [];
@@ -25,7 +25,7 @@ let categoriasData = [];
 
 async function fetchCategorias() {
     try {
-        const response = await fetch('http://localhost:8080/categorias');
+        const response = await fetch(`${apiUrl}/categorias`);
         const data = await response.json();
         categoriasData = data;
         renderCategorias(categoriasData);
